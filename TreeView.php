@@ -28,7 +28,7 @@ use yii\helpers\Html;
  * @since  1.0
  */
 class TreeView extends Widget
-{
+{ 
     /**
      * toolbar buttons
      */
