@@ -184,7 +184,46 @@ echo $renderContent(Module::VIEW_PART_1);
  * SECTION 6: Basic node attributes for editing.
  */
 ?>
-
+<?php if ($iconsList == 'text' || $iconsList == 'none'): ?>
+    <?php if ($showIDAttribute): ?>
+        <div class="row">
+            <div class="col-sm-4">
+                <?= $keyField ?>
+            </div>
+            <div class="col-sm-8">
+                <?= $form->field($node, $nameAttribute)->textInput($inputOpts) ?>
+            </div>
+        </div>
+    <?php else: ?>
+        <?= $keyField ?>
+        <?= $form->field($node, $nameAttribute)->textInput($inputOpts) ?>
+    <?php endif; ?>
+<?php else: ?>
+    <div class="row">
+        <div class="col-sm-6">
+            <?= $keyField ?>
+            <?= Html::activeHiddenInput($node, $iconTypeAttribute) ?>
+            <?= $form->field($node, $nameAttribute)->textArea(['rows' => 3] + $inputOpts) ?>
+        </div>
+        <div class="col-sm-6">
+            <?= /** @noinspection PhpUndefinedMethodInspection */
+            $form->field($node, $iconAttribute)->multiselect($iconsList, [
+                'item' => function ($index, $label, $name, $checked, $value) use ($inputOpts) {
+                    if ($index == 0 && $value == '') {
+                        $checked = true;
+                        $value = '';
+                    }
+                    return '<div class="radio">' . Html::radio($name, $checked, [
+                        'value' => $value,
+                        'label' => $label,
+                        'disabled' => !empty($inputOpts['readonly']) || !empty($inputOpts['disabled'])
+                    ]) . '</div>';
+                },
+                'selector' => 'radio',
+            ]) ?>
+        </div>
+    </div>
+<?php endif; ?>
 
 <?php
 /**
