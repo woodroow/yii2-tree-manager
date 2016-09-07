@@ -450,10 +450,7 @@ HTML;
      */
     public $headerTemplate = <<< HTML
 <div class="row">
-    <div class="col-sm-6">
-        {heading}
-    </div>
-    <div class="col-sm-6">
+    <div class="col-sm-12">
         {search}
     </div>
 </div>
