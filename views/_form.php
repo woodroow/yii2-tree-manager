@@ -135,7 +135,7 @@ $renderContent = function ($part) use ($nodeAddlViews, $params, $form) {
 <div class="kv-detail-heading">
     <?php if (empty($inputOpts['disabled']) || ($isAdmin && $showFormButtons)): ?>
         <div class="pull-right">
-            <button class="btn btn-default" title="Добавить руководителя">
+            <button id="add_rukovoditel" class="btn btn-default" title="Добавить руководителя">
                 <i class="glyphicon glyphicon-repeat"></i>
                 Добавить руководителя
             </button>
