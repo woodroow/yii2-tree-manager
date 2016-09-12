@@ -133,6 +133,10 @@ $renderContent = function ($part) use ($nodeAddlViews, $params, $form) {
 <div class="kv-detail-heading">
 <?php if (empty($inputOpts['disabled']) || ($isAdmin && $showFormButtons)): ?>
         <div class="pull-right">
+            <button type="reset" class="btn btn-info waves-effect" title="Добавить пользователя">
+                <i class="glyphicon glyphicon-user"></i>
+                Добавить пользователя
+            </button>
             <button type="reset" class="btn btn-default waves-effect" title="<?= Yii::t('kvtree', 'Reset') ?>">
                 <i class="glyphicon glyphicon-repeat"></i>
             </button>
