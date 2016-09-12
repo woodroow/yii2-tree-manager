@@ -196,22 +196,6 @@ echo $renderContent(Module::VIEW_PART_1);
         <?= $form->field($node, $nameAttribute)->textInput($inputOpts) ?>
             </div>
         </div>
-        <div class="row">
-                <div class="col-sm-12">
-                    <div class="btn-group btn-group-justified" role="group">
-                        <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-default waves-effect">Добавить руководителя</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-default waves-effect">Добавить наблюдателя</button>
-                        </div>
-                        <div class="btn-group" role="group">
-                                    <button type="button" class="btn btn-default waves-effect">Добавить исполнителя</button>
-                        </div>
-                    </div>
-                </div>
-
-        </div>
     <?php else: ?>
         <?= $keyField ?>
         <?= $form->field($node, $nameAttribute)->textInput($inputOpts) ?>
@@ -242,16 +226,6 @@ echo $renderContent(Module::VIEW_PART_1);
             ])
             ?>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="btn-group btn-group" role="group">
-                        <button type="button" class="btn btn-default">Добавить руководителя</button>
-                        <button type="button" class="btn btn-default">Добавить наблюдателя</button>
-                        <button type="button" class="btn btn-default">Добавить исполнителя</button>
-                    </div>
-                </div>
-
             </div>
 
 
