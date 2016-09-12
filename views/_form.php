@@ -135,7 +135,6 @@ $renderContent = function ($part) use ($nodeAddlViews, $params, $form) {
         <div class="pull-right">
             <button id="add_user" class="btn btn-default btn-icon-text waves-effect" title="Добавить пользователя">
                 <i class="zmdi zmdi-account-add"></i>
-                Добавить пользователя
             </button>
             <button type="reset" class="btn btn-default waves-effect" title="<?= Yii::t('kvtree', 'Reset') ?>">
                 <i class="zmdi zmdi-repeat"></i>
