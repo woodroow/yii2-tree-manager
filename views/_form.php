@@ -133,10 +133,10 @@ $renderContent = function ($part) use ($nodeAddlViews, $params, $form) {
 <div class="kv-detail-heading">
 <?php if (empty($inputOpts['disabled']) || ($isAdmin && $showFormButtons)): ?>
         <div class="pull-right">
-            <button type="reset" class="btn btn-default" title="<?= Yii::t('kvtree', 'Reset') ?>">
+            <button type="reset" class="btn btn-default waves-effect" title="<?= Yii::t('kvtree', 'Reset') ?>">
                 <i class="glyphicon glyphicon-repeat"></i>
             </button>
-            <button type="submit" class="btn btn-primary" title="<?= Yii::t('kvtree', 'Save') ?>">
+            <button type="submit" class="btn btn-primary waves-effect" title="<?= Yii::t('kvtree', 'Save') ?>">
                 <i class="glyphicon glyphicon-floppy-disk"></i>
             </button>
         </div>
@@ -194,10 +194,10 @@ echo $renderContent(Module::VIEW_PART_1);
         </div>
         <div class="row">
                 <div class="col-sm-12">
-                    <div class="btn-group btn-group" role="group">
-                        <button type="button" class="btn btn-default">Добавить руководителя</button>
-                        <button type="button" class="btn btn-default">Добавить наблюдателя</button>
-                        <button type="button" class="btn btn-default">Добавить исполнителя</button>
+                    <div class="btn-group btn-group-justified" role="group">
+                        <button type="button" class="btn btn-default waves-effect">Добавить руководителя</button>
+                        <button type="button" class="btn btn-default waves-effect">Добавить наблюдателя</button>
+                        <button type="button" class="btn btn-default waves-effect">Добавить исполнителя</button>
                     </div>
                 </div>
 
