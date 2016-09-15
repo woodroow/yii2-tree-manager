@@ -214,6 +214,7 @@
                     if (msg !== false && !isEmpty(msg.out)) {
                         self.showAlert(msg.out, msg.type);
                     }
+                    alert('123');
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     self.raise('treeview.selectajaxerror', [key, jqXHR, textStatus, errorThrown]);
