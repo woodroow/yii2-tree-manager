@@ -196,6 +196,11 @@ echo $renderContent(Module::VIEW_PART_1);
         <?= $form->field($node, $nameAttribute)->textInput($inputOpts) ?>
             </div>
         </div>
+        <div class="row">
+            <div id="all_users" class="col-sm-12">
+        
+            </div>
+        </div>
     <?php else: ?>
         <?= $keyField ?>
         <?= $form->field($node, $nameAttribute)->textInput($inputOpts) ?>
