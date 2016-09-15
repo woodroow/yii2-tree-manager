@@ -202,7 +202,6 @@
                     addCss($detail, 'kv-loading');
                 },
                 success: function (data, textStatus, jqXHR) {
-                    console.log('asdasd');
                     var ev = data.status === 'error' ? 'treeview.selecterror' : 'treeview.selected';
                     $detail.html(data.out);
                     self.raise(ev, [key, data, textStatus, jqXHR]);
@@ -215,6 +214,8 @@
                     if (msg !== false && !isEmpty(msg.out)) {
                         self.showAlert(msg.out, msg.type);
                     }
+                    // вызываем функцию отображения пользователей данной группы
+                    ShowUsersNode(key);
                 },
                 error: function (jqXHR, textStatus, errorThrown) {
                     self.raise('treeview.selectajaxerror', [key, jqXHR, textStatus, errorThrown]);
