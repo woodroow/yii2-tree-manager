@@ -436,7 +436,7 @@ class TreeView extends Widget
         {wrapper}
     </div>
     </div>
-    <div class="col-sm-8 card">
+    <div class="col-sm-8">
     <div class="card">
         {detail}
     </div>
