@@ -13,6 +13,7 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\web\View;
 
+$this->registerCssFile('../assets/material_template/light/vendors/farbtastic/farbtastic.css');
 /**
  * @var View       $this
  * @var Tree       $node
@@ -319,3 +320,6 @@ echo $renderContent(Module::VIEW_PART_1);
          */
         ?>
         <?= $renderContent(Module::VIEW_PART_5) ?>
+
+<?php
+$this->registerJsFile('../assets/material_template/light/vendors/farbtastic/farbtastic.min.js', ['depends' => 'yii\web\JqueryAsset']);
