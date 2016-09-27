@@ -13,7 +13,6 @@ use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
 use yii\web\View;
 
-
 /**
  * @var View       $this
  * @var Tree       $node
@@ -132,7 +131,7 @@ $renderContent = function ($part) use ($nodeAddlViews, $params, $form) {
  */
 ?>
 <div class="kv-detail-heading">
-<?php if (empty($inputOpts['disabled']) || ($isAdmin && $showFormButtons)): ?>
+    <?php if (empty($inputOpts['disabled']) || ($isAdmin && $showFormButtons)): ?>
         <div class="pull-right">
             <button type="button" id="add_user" class="btn btn-default waves-effect" title="Добавить пользователя">
                 <i class="zmdi zmdi-account-add"></i>
@@ -144,7 +143,7 @@ $renderContent = function ($part) use ($nodeAddlViews, $params, $form) {
                 <i class="zmdi zmdi-floppy"></i>
             </button>
         </div>
-<?php endif; ?>
+    <?php endif; ?>
     <div class="kv-detail-crumbs"><?= $name ?></div>
     <div class="clearfix"></div>
 </div>
@@ -155,21 +154,21 @@ $renderContent = function ($part) use ($nodeAddlViews, $params, $form) {
  */
 ?>
 <div class="kv-treeview-alerts">
-<?php
-$session = Yii::$app->session;
-if ($session->hasFlash('success')) {
-    echo $showAlert('success', $session->getFlash('success'), false);
-} else {
-    echo $showAlert('success');
-}
-if ($session->hasFlash('error')) {
-    echo $showAlert('danger', $session->getFlash('error'), false);
-} else {
-    echo $showAlert('danger');
-}
-echo $showAlert('warning');
-echo $showAlert('info');
-?>
+    <?php
+    $session = Yii::$app->session;
+    if ($session->hasFlash('success')) {
+        echo $showAlert('success', $session->getFlash('success'), false);
+    } else {
+        echo $showAlert('success');
+    }
+    if ($session->hasFlash('error')) {
+        echo $showAlert('danger', $session->getFlash('error'), false);
+    } else {
+        echo $showAlert('danger');
+    }
+    echo $showAlert('warning');
+    echo $showAlert('info');
+    ?>
 </div>
 
 <?php
@@ -190,15 +189,35 @@ echo $renderContent(Module::VIEW_PART_1);
     <?php if ($showIDAttribute): ?>
         <div class="row">
             <div class="col-sm-4">
-        <?= $keyField ?>
+                <?= $keyField ?>
             </div>
             <div class="col-sm-8">
-        <?= $form->field($node, $nameAttribute)->textInput($inputOpts) ?>
+                <?= $form->field($node, $nameAttribute)->textInput($inputOpts) ?>
             </div>
         </div>
+        <div class="col-sm-8 col-sm-offset-4">
+            <div class="cp-container">
+                <div class="input-group form-group">
+                    <span class="input-group-addon"><i
+                            class="zmdi zmdi-invert-colors"></i></span>
+                    <div class="fg-line dropdown">
+                        <input id="colorpicker_input" type="text" class="form-control cp-value" value="#8BC34A"
+                               data-toggle="dropdown">
+
+                        <div class="dropdown-menu">
+                            <div id="colorpicker_picker" class="color-picker" data-cp-default="#8BC34A"></div>
+                        </div>
+
+                        <i class="cp-value"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
         <div class="row">
             <div id="all_users" class="col-sm-12">
-        
+
             </div>
         </div>
     <?php else: ?>
@@ -208,28 +227,28 @@ echo $renderContent(Module::VIEW_PART_1);
 <?php else: ?>
     <div class="row">
         <div class="col-sm-6">
-    <?= $keyField ?>
+            <?= $keyField ?>
             <?= Html::activeHiddenInput($node, $iconTypeAttribute) ?>
             <?= $form->field($node, $nameAttribute)->textArea(['rows' => 3] + $inputOpts) ?>
         </div>
         <div class="col-sm-6">
-    <?=
-    /** @noinspection PhpUndefinedMethodInspection */
-    $form->field($node, $iconAttribute)->multiselect($iconsList, [
-        'item' => function ($index, $label, $name, $checked, $value) use ($inputOpts) {
-            if ($index == 0 && $value == '') {
-                $checked = true;
-                $value = '';
-            }
-            return '<div class="radio">' . Html::radio($name, $checked, [
-                        'value' => $value,
-                        'label' => $label,
-                        'disabled' => !empty($inputOpts['readonly']) || !empty($inputOpts['disabled'])
-                    ]) . '</div>';
-        },
-                'selector' => 'radio',
-            ])
-            ?>
+            <?=
+            /** @noinspection PhpUndefinedMethodInspection */
+            $form->field($node, $iconAttribute)->multiselect($iconsList, [
+                'item' => function ($index, $label, $name, $checked, $value) use ($inputOpts) {
+                    if ($index == 0 && $value == '') {
+                        $checked = true;
+                        $value = '';
+                    }
+                    return '<div class="radio">' . Html::radio($name, $checked, [
+                                'value' => $value,
+                                'label' => $label,
+                                'disabled' => !empty($inputOpts['readonly']) || !empty($inputOpts['disabled'])
+                            ]) . '</div>';
+                },
+                        'selector' => 'radio',
+                    ])
+                    ?>
                 </div>
             </div>
 
