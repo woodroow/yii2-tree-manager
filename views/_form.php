@@ -208,7 +208,7 @@ echo $renderContent(Module::VIEW_PART_1);
                             <div id="colorpicker_picker" class="color-picker" data-cp-default="#8BC34A"></div>
                         </div>
 
-                        <i class="cp-value" style="background-color: rgb(223, 169, 181); color: rgb(0, 0, 0);"></i>
+                        <i id="colorpicker_value" class="cp-value"></i>
                     </div>
                 </div>
             </div>
