@@ -191,15 +191,18 @@ echo $renderContent(Module::VIEW_PART_1);
             <div class="col-sm-4">
                 <?= $keyField ?>
             </div>
+        </div>
+        <div class="row">
             <div class="col-sm-8">
                 <?= $form->field($node, $nameAttribute)->textInput($inputOpts) ?>
             </div>
         </div>
-        <div class="col-sm-8 col-sm-offset-4">
+<!--        <div class="col-sm-8 col-sm-offset-4">-->
+        <div class="row">
             <div class="cp-container">
                 <div class="input-group form-group">
-                    <span class="input-group-addon"><i
-                            class="zmdi zmdi-invert-colors"></i></span>
+<!--                    <span class="input-group-addon"><i
+                            class="zmdi zmdi-invert-colors"></i></span>-->
                     <div class="fg-line dropdown">
                         <input id="colorpicker_input" type="text" class="form-control cp-value" value="#8BC34A"
                                data-toggle="dropdown">
