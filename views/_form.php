@@ -133,14 +133,14 @@ $renderContent = function ($part) use ($nodeAddlViews, $params, $form) {
 <div class="kv-detail-heading">
     <?php if (empty($inputOpts['disabled']) || ($isAdmin && $showFormButtons)): ?>
         <div class="pull-right">
-            <button type="button" id="add_user" class="btn btn-default btn-icon-text waves-effect" title="Добавить пользователя">
-                <i class="zmdi zmdi-account-add"></i> Добавить пользователя
+            <button type="button" id="add_user" class="btn btn-default waves-effect" title="Добавить пользователя">
+                <i class="zmdi zmdi-account-add"></i>
             </button>
 <!--            <button type="reset" class="btn btn-default btn-icon-text waves-effect" title="<?= Yii::t('kvtree', 'Reset') ?>">
                 <i class="zmdi zmdi-repeat"></i> 
             </button>-->
-            <button type="submit" class="btn btn-primary btn-icon-text waves-effect" title="<?= Yii::t('kvtree', 'Save') ?>">
-                <i class="zmdi zmdi-floppy"></i> Сохранить
+            <button type="submit" class="btn btn-primary waves-effect" title="<?= Yii::t('kvtree', 'Save') ?>">
+                <i class="zmdi zmdi-floppy"></i>
             </button>
         </div>
     <?php endif; ?>
