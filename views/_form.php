@@ -200,12 +200,12 @@ echo $renderContent(Module::VIEW_PART_1);
                      id="top_information">
 
                     <div class="row">
-                        <div class="col-sm-4">
+                        <div class="col-sm-12">
                             <?= $keyField ?>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-sm-8">
+                        <div class="col-sm-12">
                             <?= $form->field($node, $nameAttribute)->textInput($inputOpts) ?>
                         </div>
                     </div>
