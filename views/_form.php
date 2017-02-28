@@ -187,42 +187,70 @@ echo $renderContent(Module::VIEW_PART_1);
 ?>
 <?php if ($iconsList == 'text' || $iconsList == 'none'): ?>
     <?php if ($showIDAttribute): ?>
-        <div class="row">
-            <div class="col-sm-4">
-                <?= $keyField ?>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-8">
-                <?= $form->field($node, $nameAttribute)->textInput($inputOpts) ?>
-            </div>
-        </div>
-<!--        <div class="col-sm-8 col-sm-offset-4">-->
-        <div class="row">
-            <div class="cp-container">
-                <div class="input-group form-group">
-<!--                    <span class="input-group-addon"><i
-                            class="zmdi zmdi-invert-colors"></i></span>-->
-                    <div class="fg-line dropdown">
-                        <input id="colorpicker_input" type="text" class="form-control cp-value" value="#8BC34A"
-                               data-toggle="dropdown">
+        <div role="tabpanel" class="tab">
+            <ul class="tab-nav" role="tablist">
+                <li class="active"><a href="#top_information" aria-controls="top_information" role="tab"
+                                      data-toggle="tab">Основная информация</a></li>
+                <li role="presentation"><a href="#users_structure" aria-controls="users_structure"
+                                           role="tab" data-toggle="tab">Пользователи</a></li>
+            </ul>
 
-                        <div class="dropdown-menu">
-                            <div id="colorpicker_picker" class="color-picker" data-cp-default="#8BC34A"></div>
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active animated fadeInRight in"
+                     id="top_information">
+
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <?= $keyField ?>
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8">
+                            <?= $form->field($node, $nameAttribute)->textInput($inputOpts) ?>
+                        </div>
+                    </div>
+                    <!--        <div class="col-sm-8 col-sm-offset-4">-->
+                    <div class="row">
+                        <div class="cp-container">
+                            <div class="input-group form-group">
+                                <span class="input-group-addon"><i
+                                        class="zmdi zmdi-invert-colors"></i></span>
+                                <div class="fg-line dropdown">
+                                    <input id="colorpicker_input" type="text" class="form-control cp-value" value="#8BC34A"
+                                           data-toggle="dropdown">
 
-                        <i id="colorpicker_value" class="cp-value"></i>
+                                    <div class="dropdown-menu">
+                                        <div id="colorpicker_picker" class="color-picker" data-cp-default="#8BC34A"></div>
+                                    </div>
+
+                                    <i id="colorpicker_value" class="cp-value"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div role="tabpanel" class="tab-pane animated fadeInRight" id="users_structure">
+                    <div class="row">
+                        <div id="all_users" class="col-sm-12">
+
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
 
-        <div class="row">
-            <div id="all_users" class="col-sm-12">
 
-            </div>
-        </div>
+
+
+
+
+
+
+
+
+
     <?php else: ?>
         <?= $keyField ?>
         <?= $form->field($node, $nameAttribute)->textInput($inputOpts) ?>
