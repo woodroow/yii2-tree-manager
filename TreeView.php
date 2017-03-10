@@ -431,12 +431,12 @@ class TreeView extends Widget
      */
     public $mainTemplate = <<< HTML
 <div class="row">
-    <div class="col-sm-3">
+    <div class="col-sm-4">
     <div class="card">
         {wrapper}
     </div>
     </div>
-    <div class="col-sm-9">
+    <div class="col-sm-8">
     <div class="card">
         {detail}
     </div>
